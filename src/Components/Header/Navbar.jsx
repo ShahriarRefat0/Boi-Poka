@@ -1,56 +1,80 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, NavLink } from 'react-router';
 
 
 const Navbar = () => {
   const links = (
     <>
-      <Link to="/">
+      <NavLink to="/">
         <li className="m-2">Home</li>
-      </Link>
-      <Link to="/about">
+      </NavLink>
+      <NavLink to="/about">
         <li className="m-2">About</li>
-      </Link>
-      <Link to="/readList" className="m-2">
+      </NavLink>
+      <NavLink to="/readList" className="m-2">
         Read List
-      </Link>
+      </NavLink>
     </>
   );
   return (
-    <div className="navbar bg-base-100">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+    <div className="bg-[#F8F7F3] text-[#3B2F2F] shadow-md px-4">
+      <div className="navbar   mx-auto w-11/12">
+        {/* Navbar Start */}
+        <div className="navbar-start">
+          {/* Dropdown (Mobile) */}
+          <div className="dropdown">
+            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+
+            {/* Dropdown Menu */}
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              {" "}
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />{" "}
-            </svg>
+              {links}
+            </ul>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-          >
-            {links}
-          </ul>
+
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-2">
+            <img
+              className="w-6"
+              src="https://img.icons8.com/parakeet/48/open-book.png"
+              alt="open-book"
+            />
+            <span
+              className="text-xl font-bold"
+              style={{
+                fontFamily: "'Playfair Display', serif",
+                color: "#8B4513",
+              }}
+            >
+              Boi<span style={{ color: "#3B2F2F" }}>-Poka</span>
+            </span>
+          </Link>
         </div>
-        <a className="btn btn-ghost text-xl">Boi Poka</a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
-      </div>
-      <div className="navbar-end">
-        <a className="btn">Button</a>
+
+        {/* Navbar Center (Desktop Menu) */}
+        <div className="navbar-center hidden lg:flex">
+          <ul className="menu menu-horizontal px-1">{links}</ul>
+        </div>
+
+        {/* Navbar End (optional for profile/login later) */}
+        <div className="navbar-end"></div>
       </div>
     </div>
   );

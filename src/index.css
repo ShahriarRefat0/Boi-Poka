@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap');
 
 @import "tailwindcss";
 
@@ -9,4 +9,16 @@
 
  .title-font{
 font-family: "Playfair Display", serif;
+ }
+
+
+.active{
+  text-decoration: underline;
+  color: gray;
+ }
+
+ .logo {
+   font-family: 'Playfair Display', serif;
+   color: #8B4513;
+   letter-spacing: 1px;
  }
