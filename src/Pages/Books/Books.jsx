@@ -12,9 +12,11 @@ const Books = ({ data }) => {
 
   // const bookPromise = fetch("/booksData.json").then((res) => res.json());
   return (
-    <div className="w-11/12 mx-auto">
+    <div className=" w-11/12 mx-auto">
       <h2 className="title-font text-center text-4xl font-bold mb-4">Books</h2>
-      <Suspense fallback={"loading"}>
+      <Suspense
+        fallback={<span className="loading loading-spinner loading-xl"></span>}
+      >
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 ">
           {data.map((book) => (
             <Book key={book.bookId} book={book}></Book>
